@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Demo</title>
+  <link rel="stylesheet" href="sidebar.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 class="title">Claude Demo</h1>
+      <div class="header-actions">
+        <button class="header-btn" id="clearBtn" title="Clear conversation">🗑️</button>
+        <div class="settings-icon" id="settingsBtn">⚙️</div>
+      </div>
+    </div>
+
+    <div class="settings-panel" id="settingsPanel">
+      <div class="settings-content">
+        <h2>Settings</h2>
+        <div class="form-group">
+          <label for="apiKey">OpenAI API Key</label>
+          <input type="password" id="apiKey" placeholder="sk-...">
+        </div>
+        <div class="form-group">
+          <label for="voiceSelect">Voice</label>
+          <select id="voiceSelect">
+            <option value="alloy">Alloy</option>
+            <option value="echo">Echo</option>
+            <option value="fable">Fable</option>
+            <option value="onyx">Onyx</option>
+            <option value="nova">Nova</option>
+            <option value="shimmer">Shimmer</option>
+          </select>
+        </div>
+        <div class="form-group checkbox-group">
+          <input type="checkbox" id="autoSpeak">
+          <label for="autoSpeak">Auto-speak responses</label>
+        </div>
+        <button id="saveSettings" class="btn btn-primary">Save Settings</button>
+        <button id="closeSettings" class="btn btn-secondary">Close</button>
+      </div>
+    </div>
+
+    <div class="chat-container" id="chatContainer">
+      <div class="welcome-message">
+        <p>👋 Hello! I'm your AI assistant.</p>
+        <p>I automatically have access to:</p>
+        <ul>
+          <li>📄 Current webpage content and structure</li>
+          <li>🖥️ JavaScript console logs and errors</li>
+          <li>🎤 Voice input and output capabilities</li>
+          <li>📸 Screenshot analysis with GPT-4 Vision</li>
+        </ul>
+        <p>Just ask me anything or capture a screenshot!</p>
+        <p class="setup-hint">Click ⚙️ to configure your API key</p>
+      </div>
+    </div>
+
+    <div class="input-area">
+      <div class="action-buttons">
+        <button id="screenshotBtn" class="icon-btn screenshot-btn" title="Analyze screenshot">📸</button>
+        <button id="micBtn" class="icon-btn mic-btn" title="Voice input">🎤</button>
+      </div>
+      <div class="input-wrapper">
+        <textarea id="userInput" placeholder="Type your message..." rows="1"></textarea>
+        <button id="sendBtn" class="send-btn">
+          <span class="send-icon">➤</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="sidebar.js"></script>
+</body>
+</html>
